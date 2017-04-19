@@ -1,4 +1,6 @@
 # Yarp
+Created and maintained by Vectorform.
+
 Yarp (Yet another reachability pod) is a reachability framework with a focus on reliability and simplicity. Yarp fully supports IPv6 and IPv4. Yarp allows you to observe changes in reachability using blocks or notifications.
 
 # Initilize Yarp Object
@@ -58,3 +60,18 @@ Yarp can be added to your project using [CocoaPods](http://blog.cocoapods.org/Po
 ```ruby
 pod 'Yarp', '~> 0.1.0'
 ```
+## Usage
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+
+## Authors
+
+Jeff Meador, jmeador@vectorform.com
+
+Cory Bechtel, cbechtel@vectorform.com
+
+
+## License
+
+Yarp is available under the BSD license. See the [LICENSE](LICENSE) file for more info.
