@@ -1,0 +1,6 @@
+framework module Yarp {
+  umbrella header "Yarp-umbrella.h"
+
+  export *
+  module * { export * }
+}

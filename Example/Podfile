@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Yarp_Example' do #, :exclusive => true do
+  pod 'Yarp', :path => '../'
+end
+
+target 'Yarp_Tests' do #, :exclusive => true do
+  pod 'Yarp', :path => '../'
+
+end

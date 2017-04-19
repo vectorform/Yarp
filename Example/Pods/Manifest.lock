@@ -1,0 +1,18 @@
+PODS:
+  - Yarp (0.1.0):
+    - Yarp/Core (= 0.1.0)
+  - Yarp/Core (0.1.0)
+
+DEPENDENCIES:
+  - Yarp (from `../`)
+
+EXTERNAL SOURCES:
+  Yarp:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Yarp: 98920da16756c2deda1d9ebebc224bc9a332dc77
+
+PODFILE CHECKSUM: ae8e029a5f2dc7d59b3c95eba704316c13f5dbfc
+
+COCOAPODS: 1.1.1

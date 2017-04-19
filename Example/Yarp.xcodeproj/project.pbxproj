@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FE1D9AEE8FC0DE6331D5162 /* Pods_Yarp_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9582755C32C30201C060F5C /* Pods_Yarp_Tests.framework */; };
+		A49527A976E1B1F981985E2F /* Pods_Yarp_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DCEFF720E9B8405AA5BC29 /* Pods_Yarp_Example.framework */; };
+		F03F64D21DE4ED70003C0BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F64D11DE4ED70003C0BE8 /* AppDelegate.swift */; };
+		F03F64D41DE4ED70003C0BE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F64D31DE4ED70003C0BE8 /* ViewController.swift */; };
+		F03F64D71DE4ED70003C0BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03F64D51DE4ED70003C0BE8 /* Main.storyboard */; };
+		F03F64D91DE4ED70003C0BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03F64D81DE4ED70003C0BE8 /* Assets.xcassets */; };
+		F03F64DC1DE4ED70003C0BE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03F64DA1DE4ED70003C0BE8 /* LaunchScreen.storyboard */; };
+		F03F64E71DE4ED70003C0BE8 /* YarpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F64E61DE4ED70003C0BE8 /* YarpTests.swift */; };
+		F0A747D21DE4EF7900C4F177 /* GeneralReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A747D11DE4EF7900C4F177 /* GeneralReachability.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F03F64E31DE4ED70003C0BE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F03F64C61DE4ED70003C0BE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F03F64CD1DE4ED70003C0BE8;
+			remoteInfo = Yarp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D51523FBF5AEAAA95BDD94D /* Pods-Yarp_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yarp_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yarp_Tests/Pods-Yarp_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2A6E047B0CD823D1E63F38BF /* Pods-Yarp_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yarp_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yarp_Tests/Pods-Yarp_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C239F8D1EA64E7E00C71D87 /* Yarp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yarp.framework; path = "../../../Library/Developer/Xcode/DerivedData/Yarp-acaqqcvffmdljkanyxbxbenvzdto/Build/Products/Debug-iphonesimulator/Yarp/Yarp.framework"; sourceTree = "<group>"; };
+		569EEF5CECF5DD5573027FDF /* Pods-Yarp_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yarp_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yarp_Example/Pods-Yarp_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		706B5D38A2E7E8397AE0B05C /* Pods-Yarp_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yarp_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yarp_Example/Pods-Yarp_Example.release.xcconfig"; sourceTree = "<group>"; };
+		A1DCEFF720E9B8405AA5BC29 /* Pods_Yarp_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yarp_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9582755C32C30201C060F5C /* Pods_Yarp_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yarp_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03F64CE1DE4ED70003C0BE8 /* Yarp_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yarp_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03F64D11DE4ED70003C0BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F03F64D31DE4ED70003C0BE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F03F64D61DE4ED70003C0BE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F03F64D81DE4ED70003C0BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F03F64DB1DE4ED70003C0BE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F03F64DD1DE4ED70003C0BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F03F64E21DE4ED70003C0BE8 /* Yarp_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Yarp_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03F64E61DE4ED70003C0BE8 /* YarpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YarpTests.swift; sourceTree = "<group>"; };
+		F03F64E81DE4ED70003C0BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0A747D11DE4EF7900C4F177 /* GeneralReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralReachability.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F03F64CB1DE4ED70003C0BE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A49527A976E1B1F981985E2F /* Pods_Yarp_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F03F64DF1DE4ED70003C0BE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FE1D9AEE8FC0DE6331D5162 /* Pods_Yarp_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F79566898CF2D82D12B201A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C239F8D1EA64E7E00C71D87 /* Yarp.framework */,
+				A1DCEFF720E9B8405AA5BC29 /* Pods_Yarp_Example.framework */,
+				C9582755C32C30201C060F5C /* Pods_Yarp_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B30663C8ABF25EF0B36B6781 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				569EEF5CECF5DD5573027FDF /* Pods-Yarp_Example.debug.xcconfig */,
+				706B5D38A2E7E8397AE0B05C /* Pods-Yarp_Example.release.xcconfig */,
+				2A6E047B0CD823D1E63F38BF /* Pods-Yarp_Tests.debug.xcconfig */,
+				0D51523FBF5AEAAA95BDD94D /* Pods-Yarp_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F03F64C51DE4ED70003C0BE8 = {
+			isa = PBXGroup;
+			children = (
+				F03F64D01DE4ED70003C0BE8 /* Yarp */,
+				F03F64E51DE4ED70003C0BE8 /* YarpTests */,
+				F03F64CF1DE4ED70003C0BE8 /* Products */,
+				6F79566898CF2D82D12B201A /* Frameworks */,
+				B30663C8ABF25EF0B36B6781 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		F03F64CF1DE4ED70003C0BE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F03F64CE1DE4ED70003C0BE8 /* Yarp_Example.app */,
+				F03F64E21DE4ED70003C0BE8 /* Yarp_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F03F64D01DE4ED70003C0BE8 /* Yarp */ = {
+			isa = PBXGroup;
+			children = (
+				F03F64D11DE4ED70003C0BE8 /* AppDelegate.swift */,
+				F03F64D31DE4ED70003C0BE8 /* ViewController.swift */,
+				F0A747D11DE4EF7900C4F177 /* GeneralReachability.swift */,
+				F03F64D51DE4ED70003C0BE8 /* Main.storyboard */,
+				F03F64D81DE4ED70003C0BE8 /* Assets.xcassets */,
+				F03F64DA1DE4ED70003C0BE8 /* LaunchScreen.storyboard */,
+				F03F64DD1DE4ED70003C0BE8 /* Info.plist */,
+			);
+			path = Yarp;
+			sourceTree = "<group>";
+		};
+		F03F64E51DE4ED70003C0BE8 /* YarpTests */ = {
+			isa = PBXGroup;
+			children = (
+				F03F64E61DE4ED70003C0BE8 /* YarpTests.swift */,
+				F03F64E81DE4ED70003C0BE8 /* Info.plist */,
+			);
+			path = YarpTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F03F64CD1DE4ED70003C0BE8 /* Yarp_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F03F64EB1DE4ED70003C0BE8 /* Build configuration list for PBXNativeTarget "Yarp_Example" */;
+			buildPhases = (
+				61A55CF27ECC25ADB908EA42 /* [CP] Check Pods Manifest.lock */,
+				F03F64CA1DE4ED70003C0BE8 /* Sources */,
+				F03F64CB1DE4ED70003C0BE8 /* Frameworks */,
+				F03F64CC1DE4ED70003C0BE8 /* Resources */,
+				F9793A1B7D845288FC6354CE /* [CP] Embed Pods Frameworks */,
+				24774DC0C11469C8BE9090BE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Yarp_Example;
+			productName = Yarp;
+			productReference = F03F64CE1DE4ED70003C0BE8 /* Yarp_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F03F64E11DE4ED70003C0BE8 /* Yarp_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F03F64EE1DE4ED70003C0BE8 /* Build configuration list for PBXNativeTarget "Yarp_Tests" */;
+			buildPhases = (
+				948E77EC14E25B8FF93E297C /* [CP] Check Pods Manifest.lock */,
+				F03F64DE1DE4ED70003C0BE8 /* Sources */,
+				F03F64DF1DE4ED70003C0BE8 /* Frameworks */,
+				F03F64E01DE4ED70003C0BE8 /* Resources */,
+				630B10BC40358B93F45C04A2 /* [CP] Embed Pods Frameworks */,
+				F8E8487F022F859C9EF46D1A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F03F64E41DE4ED70003C0BE8 /* PBXTargetDependency */,
+			);
+			name = Yarp_Tests;
+			productName = YarpTests;
+			productReference = F03F64E21DE4ED70003C0BE8 /* Yarp_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F03F64C61DE4ED70003C0BE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Vectorform;
+				TargetAttributes = {
+					F03F64CD1DE4ED70003C0BE8 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2T99X5N2FU;
+						ProvisioningStyle = Automatic;
+					};
+					F03F64E11DE4ED70003C0BE8 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F03F64CD1DE4ED70003C0BE8;
+					};
+				};
+			};
+			buildConfigurationList = F03F64C91DE4ED70003C0BE8 /* Build configuration list for PBXProject "Yarp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F03F64C51DE4ED70003C0BE8;
+			productRefGroup = F03F64CF1DE4ED70003C0BE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F03F64CD1DE4ED70003C0BE8 /* Yarp_Example */,
+				F03F64E11DE4ED70003C0BE8 /* Yarp_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F03F64CC1DE4ED70003C0BE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F03F64DC1DE4ED70003C0BE8 /* LaunchScreen.storyboard in Resources */,
+				F03F64D91DE4ED70003C0BE8 /* Assets.xcassets in Resources */,
+				F03F64D71DE4ED70003C0BE8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F03F64E01DE4ED70003C0BE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24774DC0C11469C8BE9090BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yarp_Example/Pods-Yarp_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61A55CF27ECC25ADB908EA42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		630B10BC40358B93F45C04A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yarp_Tests/Pods-Yarp_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		948E77EC14E25B8FF93E297C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F8E8487F022F859C9EF46D1A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yarp_Tests/Pods-Yarp_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9793A1B7D845288FC6354CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yarp_Example/Pods-Yarp_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F03F64CA1DE4ED70003C0BE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F03F64D41DE4ED70003C0BE8 /* ViewController.swift in Sources */,
+				F03F64D21DE4ED70003C0BE8 /* AppDelegate.swift in Sources */,
+				F0A747D21DE4EF7900C4F177 /* GeneralReachability.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F03F64DE1DE4ED70003C0BE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F03F64E71DE4ED70003C0BE8 /* YarpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F03F64E41DE4ED70003C0BE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F03F64CD1DE4ED70003C0BE8 /* Yarp_Example */;
+			targetProxy = F03F64E31DE4ED70003C0BE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F03F64D51DE4ED70003C0BE8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F03F64D61DE4ED70003C0BE8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F03F64DA1DE4ED70003C0BE8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F03F64DB1DE4ED70003C0BE8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F03F64E91DE4ED70003C0BE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F03F64EA1DE4ED70003C0BE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F03F64EC1DE4ED70003C0BE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 569EEF5CECF5DD5573027FDF /* Pods-Yarp_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2T99X5N2FU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = Yarp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.Yarp-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F03F64ED1DE4ED70003C0BE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 706B5D38A2E7E8397AE0B05C /* Pods-Yarp_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2T99X5N2FU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = Yarp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.Yarp-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F03F64EF1DE4ED70003C0BE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A6E047B0CD823D1E63F38BF /* Pods-Yarp_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YarpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vectorform.YarpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yarp.app/Yarp";
+			};
+			name = Debug;
+		};
+		F03F64F01DE4ED70003C0BE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D51523FBF5AEAAA95BDD94D /* Pods-Yarp_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YarpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vectorform.YarpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yarp.app/Yarp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F03F64C91DE4ED70003C0BE8 /* Build configuration list for PBXProject "Yarp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F03F64E91DE4ED70003C0BE8 /* Debug */,
+				F03F64EA1DE4ED70003C0BE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F03F64EB1DE4ED70003C0BE8 /* Build configuration list for PBXNativeTarget "Yarp_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F03F64EC1DE4ED70003C0BE8 /* Debug */,
+				F03F64ED1DE4ED70003C0BE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F03F64EE1DE4ED70003C0BE8 /* Build configuration list for PBXNativeTarget "Yarp_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F03F64EF1DE4ED70003C0BE8 /* Debug */,
+				F03F64F01DE4ED70003C0BE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F03F64C61DE4ED70003C0BE8 /* Project object */;
+}
