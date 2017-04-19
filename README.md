@@ -16,7 +16,7 @@ yarp?.start()
 ```
 
 # Listening Methods
-
+### Handler Block
 ```swift
 yarp?.addHandler("key1", handler: { (yarp) in
     if let reachable = yarp.isReachable {
@@ -25,7 +25,8 @@ yarp?.addHandler("key1", handler: { (yarp) in
 })
 ```
 
-OR you can listen for the notification sent from Yarp (if you have only one Yarp object you can safely set the object parameter to nil, but if you use more than one to monitor multiple hosts, then passing the object parameter into the addObserver function will make sure that you only get that objects reachability notifications)
+### OR Notification Observer
+you can listen for the notification sent from Yarp (if you have only one Yarp object you can safely set the object parameter to nil, but if you use more than one to monitor multiple hosts, then passing the object parameter into the addObserver function will make sure that you only get that objects reachability notifications)
 
 ```swift
 //listen for ANY Yarp notification

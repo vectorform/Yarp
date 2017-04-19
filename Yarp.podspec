@@ -13,13 +13,9 @@ Yarp (Yet another reachability pod) is a reachability framework with a focus on 
   s.source           = { :git => "https://github.com/vectorform/Yarp.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/vectorform'
 
-  s.source_files = 'Core/'
+  s.source_files = 'Core/*.swift'
   s.platform     = :ios, '10.0'
   s.requires_arc = true
   s.frameworks = 'SystemConfiguration'
-  s.default_subspec = 'Core'
 
-  s.subspec 'Core' do |core|
-    core.source_files = 'Core/**/*.swift'
-  end
 end
