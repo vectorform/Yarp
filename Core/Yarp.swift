@@ -98,15 +98,15 @@ open class Yarp {
     public init?(hostAddress: String) {
         
         var remoteAddress = sockaddr_in()
-        var RemoteIPv6Address = sockaddr_in6()
+        var remoteIPv6Address = sockaddr_in6()
         
         if hostAddress.withCString({ cstring in inet_pton(AF_INET6, cstring, &RemoteIPv6Address) }) == 1 {
              // IPv6
             
-            RemoteIPv6Address.sin6_len = UInt8(MemoryLayout.size(ofValue: RemoteIPv6Address))
-            RemoteIPv6Address.sin6_family = sa_family_t(AF_INET6)
+            remoteIPv6Address.sin6_len = UInt8(MemoryLayout.size(ofValue: remoteIPv6Address))
+            remoteIPv6Address.sin6_family = sa_family_t(AF_INET6)
             
-            guard let reachability = withUnsafePointer(to: &RemoteIPv6Address, {
+            guard let reachability = withUnsafePointer(to: &remoteIPv6Address, {
                 $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
                     SCNetworkReachabilityCreateWithAddress(nil, $0)
                 }
