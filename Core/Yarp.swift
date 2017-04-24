@@ -100,7 +100,7 @@ open class Yarp {
         var remoteAddress = sockaddr_in()
         var remoteIPv6Address = sockaddr_in6()
         
-        if hostAddress.withCString({ cstring in inet_pton(AF_INET6, cstring, &RemoteIPv6Address) }) == 1 {
+        if hostAddress.withCString({ cstring in inet_pton(AF_INET6, cstring, &remoteIPv6Address) }) == 1 {
              // IPv6
             
             remoteIPv6Address.sin6_len = UInt8(MemoryLayout.size(ofValue: remoteIPv6Address))
