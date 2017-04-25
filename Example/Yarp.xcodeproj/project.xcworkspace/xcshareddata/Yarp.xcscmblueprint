@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FA7E4393894769EC581C40E2A34E49C1853584D3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D38720C7BF244F31FC967E9A2E412EA56882CB7D" : 9223372036854775807,
+    "FA7E4393894769EC581C40E2A34E49C1853584D3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4C20B372-017B-40E5-BBD5-BF60D6737997",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D38720C7BF244F31FC967E9A2E412EA56882CB7D" : "..",
+    "FA7E4393894769EC581C40E2A34E49C1853584D3" : "Yarp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Yarp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/Yarp.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CocoaHeadsDetroit\/PresentationMaterial.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D38720C7BF244F31FC967E9A2E412EA56882CB7D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vectorform\/Yarp",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FA7E4393894769EC581C40E2A34E49C1853584D3"
+    }
+  ]
+}
