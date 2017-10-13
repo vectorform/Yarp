@@ -25,13 +25,7 @@ private func reachabilityCallback(_ reachability: SCNetworkReachability, flags: 
         let yarp = Unmanaged<Yarp>.fromOpaque(info).takeUnretainedValue()
         yarp.reachabilityFlags = flags
         
-        // Send out a notification
-        NotificationCenter.default.post(name: Yarp.StatusChangedNotification, object: yarp)
-        
-        // Call any handlers.
-        for (_, handler) in yarp.handlers {
-            handler(yarp)
-        }
+        yarp.notifyListenerOfChange()
     }
 }
 
@@ -54,15 +48,19 @@ open class Yarp {
     // Yarp will hold a dictionary of Handlers indexed by a token's key(string).
     fileprivate var handlers = [String : Handler]()
     
-    fileprivate var reachability : SCNetworkReachability
+    fileprivate var reachability: SCNetworkReachability
     
-    fileprivate var reachabilitySerialQueue : DispatchQueue?
+    fileprivate var reachabilitySerialQueue: DispatchQueue?
+    
+    fileprivate let isUsingIPAddress: Bool
     
     //gets set once the reachability status changes for a given yarp object
     public var reachabilityFlags: SCNetworkReachabilityFlags?
     
     // Default init simply tests if there's an internet connection at all NOTE: does NOT shoot off an event upon starting
     public init?() {
+        
+        self.isUsingIPAddress = true
         
         // Reachability treats 0.0.0.0 as a special token to monitor general routing status for IPv4 and IPv6 (information gathered from Apple's reachability)
         var zeroAddress = sockaddr_in()
@@ -83,6 +81,8 @@ open class Yarp {
     //initialize with a custom hostname NOTE: DOES shoot off an event upon starting if you use a name (www.google.com), but does not if given the IP address ("http://216.58.195.238")
     public init?(hostName: String) {
         
+        self.isUsingIPAddress = false
+        
         guard let reachability = SCNetworkReachabilityCreateWithName(nil, hostName) else {
             return nil
         }
@@ -92,6 +92,8 @@ open class Yarp {
     
     //initialize with a custom reachability address (ie. "216.58.195.238" or similar)
     public init?(hostAddress: String) {
+        
+        self.isUsingIPAddress = true
         
         var remoteAddress = sockaddr_in()
         var remoteIPv6Address = sockaddr_in6()
@@ -132,6 +134,16 @@ open class Yarp {
         }
     }
     
+    fileprivate func notifyListenerOfChange(){
+        // Send out a notification
+        NotificationCenter.default.post(name: Yarp.StatusChangedNotification, object: self)
+        
+        // Call any handlers.
+        for (_, handler) in self.handlers {
+            handler(self)
+        }
+    }
+    
     // must call this in order to start listening for default reachability changes.  Can be called multiple times
     public func start() {
         objc_sync_enter(self)
@@ -160,6 +172,15 @@ open class Yarp {
         }
         
         self.reachabilitySerialQueue = dispatchQueue
+        
+        if self.isUsingIPAddress {
+            
+            var flags = SCNetworkReachabilityFlags()
+            SCNetworkReachabilityGetFlags(self.reachability, &flags)
+            self.reachabilityFlags = flags
+            
+            self.notifyListenerOfChange()
+        }
     }
     
     // Stops the current listening of Reachability Changes and optionally clears the handlers.
@@ -181,7 +202,7 @@ open class Yarp {
     }
     
     // Adds a listener
-    public func addHandler(_ key: String?, handler: @escaping Handler) -> String {
+    @discardableResult public func addHandler(_ key: String?, handler: @escaping Handler) -> String {
         var token: String
         
         if let userKey = key {

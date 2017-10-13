@@ -1,9 +1,9 @@
+// Copyright (c) 2016 Vectorform LLC
+// http://www.vectorform.com/
+// http://github.com/vectorform/Yarp
 //
+//  Yarp Example
 //  ViewController.swift
-//  Yarp
-//
-//  Created by Jeff Meador on 11/22/16.
-//  Copyright © 2016 Vectorform. All rights reserved.
 //
 
 import UIKit
@@ -11,46 +11,173 @@ import Yarp
 
 class ViewController: UIViewController, UITextFieldDelegate { 
 
-    let defaultYarp: Yarp? = Yarp() //  "http://8.8.8.8:80")
-    let googleYarp: Yarp? = Yarp(hostName: "http://216.58.195.238")
-    var customYarp: Yarp?
+    let defaultYarp: Yarp? = Yarp()
+    let googleYarp: Yarp? = Yarp(hostName: "www.google.com")
+    var customAddressYarp: Yarp?
+    var customHostYarp: Yarp?
     
-//    let hostAddressExample = Yarp(hostAddress: "216.58.195.238") 
+    var customAddressField: UITextField = {
+        class SetHeightTextField: UITextField {
+            override var intrinsicContentSize: CGSize {
+                return CGSize(width: super.intrinsicContentSize.width, height:  40)
+            }
+        }
+        return SetHeightTextField()
+    }()
+    let customAddressButton = UIButton()
     
-    let customAddressField = UITextField(frame: CGRect(x: 20, y: 20, width: 200, height: 50))
-    let reachabaleButton = UIButton(frame: CGRect(x: 20, y: 100, width: 200, height: 50))
+    var customHostField: UITextField = {
+        class SetHeightTextField: UITextField {
+            override var intrinsicContentSize: CGSize {
+                return CGSize(width: super.intrinsicContentSize.width, height:  40)
+            }
+        }
+        return SetHeightTextField()
+    }()
+    let customHostButton = UIButton()
     
-    let defaultNameLabel = UILabel(frame: CGRect(x: 5, y: 150, width: 300, height: 25))
-    let googleNameLabel =  UILabel(frame: CGRect(x: 5, y: 200, width: 300, height: 25))
-    let customNameLabel =  UILabel(frame: CGRect(x: 5, y: 250, width: 300, height: 25))
+    let defaultNameLabel = UILabel()
+    let defaultStatusLabel = UILabel()
     
-    let defaultStatusLabel = UILabel(frame: CGRect(x: 20, y: 175, width: 300, height: 25))
-    let googleStatusLabel =  UILabel(frame: CGRect(x: 20, y: 225, width: 300, height: 25))
-    let customStatusLabel =  UILabel(frame: CGRect(x: 20, y: 275, width: 300, height: 150))
+    let googleNameLabel = UILabel()
+    let googleStatusLabel = UILabel()
     
+    let customAddressNameLabel = UILabel()
+    let customAddressStatusLabel = UILabel()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let customHostNameLabel = UILabel()
+    let customHostStatusLabel = UILabel()
+    
+    override func loadView() {
+        super.loadView()
+        self.view.backgroundColor = UIColor.white
         
+        let scrollView = UIScrollView()
+        let stackView = UIStackView(arrangedSubviews:
+            [UIView(),
+             self.defaultNameLabel,
+             self.defaultStatusLabel,
+             UIView(),
+             self.googleNameLabel,
+             self.googleStatusLabel,
+             UIView(),
+             UIView(),
+             self.customAddressField,
+             self.customAddressButton,
+             self.customAddressNameLabel,
+             self.customAddressStatusLabel,
+             UIView(),
+             self.customHostField,
+             self.customHostButton,
+             self.customHostNameLabel,
+             self.customHostStatusLabel])
+        
+        self.defaultNameLabel.backgroundColor = UIColor.red.withAlphaComponent(0.15)
+        self.defaultStatusLabel.backgroundColor = UIColor.red.withAlphaComponent(0.15)
+        
+        self.googleNameLabel.backgroundColor = UIColor.blue.withAlphaComponent(0.15)
+        self.googleStatusLabel.backgroundColor = UIColor.blue.withAlphaComponent(0.15)
+        
+        self.customAddressNameLabel.backgroundColor = UIColor.green.withAlphaComponent(0.15)
+        self.customAddressStatusLabel.backgroundColor = UIColor.green.withAlphaComponent(0.15)
+        
+        self.customHostNameLabel.backgroundColor = UIColor.yellow.withAlphaComponent(0.15)
+        self.customHostStatusLabel.backgroundColor = UIColor.yellow.withAlphaComponent(0.15)
+        
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        
+        self.view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        
+        scrollView.delaysContentTouches = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor).isActive = true
+        stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        
+        customAddressField.placeholder = "Enter IP Address"
         customAddressField.autocapitalizationType = .none
         customAddressField.borderStyle = .line
         customAddressField.returnKeyType = .done
         customAddressField.delegate = self
         
-        reachabaleButton.layer.cornerRadius = 5
-        reachabaleButton.clipsToBounds = true
-        reachabaleButton.backgroundColor = UIColor.purple
-        reachabaleButton.setTitle("Create New Yarp", for: .normal)
-        reachabaleButton.addTarget(self, action: #selector(addCustomYarp), for: .touchUpInside)
+        customAddressButton.clipsToBounds = true
+        customAddressButton.setTitleColor(UIColor.black, for: .normal)
+        customAddressButton.backgroundColor =  UIColor.green.withAlphaComponent(0.75)
+        customAddressButton.setTitle("Monitor New IP Address", for: .normal)
+        customAddressButton.addTarget(self, action: #selector(customAddressButtonPressed), for: .touchUpInside)
         
-        view.addSubview(customAddressField)
-        view.addSubview(reachabaleButton)
-        view.addSubview(customAddressField)
         
-        defaultNameLabel.text = "Default Apple Reachability IP (0.0.0.0)"
-        googleNameLabel.text = "Google Hostname (www.google.com)"
-        customNameLabel.text = "Custom : ---"
+        customHostField.placeholder = "Enter Host Name"
+        customHostField.autocapitalizationType = .none
+        customHostField.borderStyle = .line
+        customHostField.returnKeyType = .done
+        customHostField.delegate = self
         
+        customHostButton.clipsToBounds = true
+        customHostButton.setTitleColor(UIColor.black, for: .normal)
+        customHostButton.backgroundColor = UIColor.yellow.withAlphaComponent(0.75)
+        customHostButton.setTitle("Monitor New Host", for: .normal)
+        customHostButton.addTarget(self, action: #selector(customHostButtonPressed), for: .touchUpInside)
+        
+        defaultNameLabel.text = "Default Apple Reachability IP: 0.0.0.0"
+        googleNameLabel.text = "Google Hostname: www.google.com"
+        customAddressNameLabel.text = "Custom Address: ---"
+        customHostNameLabel.text = "Custom Host: ---"
+    }
+
+    //to fix apples not hiding textfields by default
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func customAddressButtonPressed() {
+        if customAddressYarp == nil {
+            self.view.endEditing(true)
+            let address = customAddressField.text!
+            customAddressYarp = Yarp(hostAddress: address)
+            if let customAddressYarp = customAddressYarp {
+                customAddressNameLabel.text = "Custom Address: " + address
+                UIView.animate(withDuration: 0.3,
+                               animations: {
+                                self.customAddressField.isHidden = true
+                                self.customAddressButton.isHidden = true //only allow people to set it once for testing
+                })
+                NotificationCenter.default.addObserver(self, selector: #selector(customAddressReachabilityChanged), name: Yarp.StatusChangedNotification, object: customAddressYarp)
+            }
+            customAddressYarp?.start()
+        }
+    }
+    
+    @objc func customHostButtonPressed() {
+        if customHostYarp == nil {
+            self.view.endEditing(true)
+            let hostName = customHostField.text!
+            customHostYarp = Yarp(hostName: customHostField.text!)
+            if let customHostYarp = customHostYarp {
+                customHostNameLabel.text = "Custom Host: " + hostName
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.customHostField.isHidden = true
+                    self.customHostButton.isHidden = true //only allow people to set it once for testing
+                })
+                NotificationCenter.default.addObserver(self, selector: #selector(customHostReachabilityChanged), name: Yarp.StatusChangedNotification, object: customHostYarp)
+            }
+            customHostYarp?.start()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         defaultYarp?.addHandler("key1", handler: { (yarp) in
             if let reachable = yarp.isReachable {
@@ -64,96 +191,70 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         })
         
-        defaultYarp?.start()
-        googleYarp?.start()
-        
-        view.addSubview(defaultNameLabel)
-        view.addSubview(googleNameLabel)
-        view.addSubview(customNameLabel)
-        
-        customStatusLabel.numberOfLines = 0
-        
-        view.addSubview(defaultStatusLabel)
-        view.addSubview(googleStatusLabel)
-        view.addSubview(customStatusLabel)
-        
-    }
-    
-    //to fix apples not hiding textfields by default
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    
-    func addCustomYarp() {
-        if customYarp == nil {
-            var hostName = customAddressField.text!
-            if !hostName.hasPrefix("http://") {
-                hostName = "http://" + hostName
-            }
-            customYarp = Yarp(hostName: customAddressField.text!)
-            if let customYarp = customYarp {
-                customNameLabel.text = "Custom : " + hostName
-                reachabaleButton.isHidden = true //only allow people to set it once for testing
-                NotificationCenter.default.addObserver(self, selector: #selector(customReachabilityChanged(_:)), name: Yarp.StatusChangedNotification, object: customYarp)
-            }
-            customYarp?.start()
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
         if let defaultYarp = defaultYarp {
-            NotificationCenter.default.addObserver(self, selector: #selector(defaultReachabilityChanged(_:)), name: Yarp.StatusChangedNotification, object: defaultYarp)
+            NotificationCenter.default.addObserver(self, selector: #selector(defaultReachabilityChanged), name: Yarp.StatusChangedNotification, object: defaultYarp)
         }
         if let googleYarp = googleYarp {
-            NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(_:)), name: Yarp.StatusChangedNotification, object: googleYarp)
+            NotificationCenter.default.addObserver(self, selector: #selector(googleReachabilityChanged), name: Yarp.StatusChangedNotification, object: googleYarp)
         }
+        
+        defaultYarp?.start()
+        googleYarp?.start()
     }
     
-    
-    
-    func defaultReachabilityChanged(_ notification: Notification) {
+    @objc func defaultReachabilityChanged(notification: Notification) {
         if let yarp = notification.object as? Yarp {
-            print(yarp.isReachable)
             if let reachable = yarp.isReachable {
+                print("default reachability changed: \(reachable)")
                 defaultStatusLabel.text = "Default isReachable: \(reachable)"
             }
         }
     }
     
-    func reachabilityChanged(_ notification: Notification) {
+    @objc func googleReachabilityChanged(notification: Notification) {
         if let yarp = notification.object as? Yarp {
-            print(yarp.isReachable)
             if let reachable = yarp.isReachable {
+                print("reachability changed: \(reachable)")
                 googleStatusLabel.text = "Google isReachable: \(reachable)"
             }
         }
     }
     
     //example for if you need to see the flags more directly
-    func customReachabilityChanged(_ notification: Notification) {
+    @objc func customAddressReachabilityChanged(notification: Notification) {
         if let yarp = notification.object as? Yarp {
-            print(yarp.isReachable)
             if let reachable = yarp.isReachable {
+                print("custom reachability changed: \(reachable)")
                 
-                
-                var output = "Custom isReachable: \(reachable)\n"
-                output += "Reachable Flag: \(yarp.reachabilityFlags?.contains(.reachable))\n"
-                output += "WWAN Flag: \(yarp.reachabilityFlags?.contains(.isWWAN))\n"
-                output += "Is Direct Flag: \(yarp.reachabilityFlags?.contains(.isDirect))\n"
-                output += "Is Local Flag: \(yarp.reachabilityFlags?.contains(.isLocalAddress))\n"
-                
-                customStatusLabel.text = output
+                if let reachabilityFlags = yarp.reachabilityFlags {
+                    var output = "Custom isReachable: \(reachable)\n"
+                    output += "Reachable Flag: \(reachabilityFlags.contains(.reachable))\n"
+                    output += "WWAN Flag: \(reachabilityFlags.contains(.isWWAN))\n"
+                    output += "Is Direct Flag: \(reachabilityFlags.contains(.isDirect))\n"
+                    output += "Is Local Flag: \(reachabilityFlags.contains(.isLocalAddress))\n"
+                    
+                    customAddressStatusLabel.text = output
+                }
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //example for if you need to see the flags more directly
+    @objc func customHostReachabilityChanged(notification: Notification) {
+        if let yarp = notification.object as? Yarp {
+            if let reachable = yarp.isReachable {
+                print("custom reachability changed: \(reachable)")
+                
+                if let reachabilityFlags = yarp.reachabilityFlags {
+                    var output = "Custom isReachable: \(reachable)\n"
+                    output += "Reachable Flag: \(reachabilityFlags.contains(.reachable))\n"
+                    output += "WWAN Flag: \(reachabilityFlags.contains(.isWWAN))\n"
+                    output += "Is Direct Flag: \(reachabilityFlags.contains(.isDirect))\n"
+                    output += "Is Local Flag: \(reachabilityFlags.contains(.isLocalAddress))\n"
+                    
+                    customHostStatusLabel.text = output
+                }
+            }
+        }
     }
 }
-

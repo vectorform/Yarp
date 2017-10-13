@@ -1,10 +1,11 @@
+// Copyright (c) 2016 Vectorform LLC
+// http://www.vectorform.com/
+// http://github.com/vectorform/Yarp
 //
+//  Yarp Example
 //  YarpTests.swift
-//  YarpTests
 //
-//  Created by Jeff Meador on 11/22/16.
-//  Copyright © 2016 Vectorform. All rights reserved.
-//
+
 
 import XCTest
 @testable import Yarp

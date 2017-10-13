@@ -3,7 +3,7 @@
 // http://github.com/vectorform/Yarp
 //
 //  Yarp
-//  Yarp.swift
+//  Yarp.h
 //
 
 #import <UIKit/UIKit.h>

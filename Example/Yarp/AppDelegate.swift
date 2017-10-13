@@ -1,9 +1,9 @@
+// Copyright (c) 2016 Vectorform LLC
+// http://www.vectorform.com/
+// http://github.com/vectorform/Yarp
 //
+//  Yarp Example
 //  AppDelegate.swift
-//  Yarp
-//
-//  Created by Jeff Meador on 11/22/16.
-//  Copyright © 2016 Vectorform. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = ViewController()
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
