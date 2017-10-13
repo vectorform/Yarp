@@ -10,10 +10,6 @@
 import Foundation
 import SystemConfiguration
 
-public extension Notification.Name {
-   public static let YarpStatusChangedNotification = Notification.Name("com.vectorform.yarp.StatusChangedNotification")
-}
-
 // Callback function that receives change events of network connectivity
 private func reachabilityCallback(_ reachability: SCNetworkReachability, flags: SCNetworkReachabilityFlags, info: UnsafeMutableRawPointer?) {
     
