@@ -1,4 +1,4 @@
-[![Swift 3 Compatible](https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift 4 Compatible](https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![Platform](https://img.shields.io/cocoapods/p/Yarp.svg?style=flat)](http://cocoadocs.org/docsets/Yarp)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Yarp.svg)](https://img.shields.io/cocoapods/v/Yarp.svg)
 
@@ -63,7 +63,7 @@ func reachabilityChanged(_ notification: Notification) {
 Yarp can be added to your project using [CocoaPods](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your `Podfile`:
 
 ```ruby
-pod 'Yarp', '~> 0.1.0'
+pod 'Yarp', '~> 1.0.0'
 ```
 ## Usage
 
