@@ -1,6 +1,7 @@
 [![Swift 4 Compatible](https://img.shields.io/badge/swift%204-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![Platform](https://img.shields.io/cocoapods/p/Yarp.svg?style=flat)](http://cocoadocs.org/docsets/Yarp)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Yarp.svg)](https://img.shields.io/cocoapods/v/Yarp.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
 # Yarp
@@ -8,8 +9,15 @@ Created and maintained by Vectorform.
 
 Yarp (Yet another reachability pod) is a reachability framework with a focus on reliability and simplicity. Yarp fully supports IPv6 and IPv4. Yarp allows you to observe changes in reachability using blocks or notifications.
 
+# Requirements
+- iOS 11.0+
+- Xcode 9.0+
+- Swift 4.0+
+
 # Initilize Yarp Object
-Note: the IPv4 addresses in the below example can be switched out for their IPv6 counterparts. In versions prior to Yarp 1.0.0, IP addresses would not perform an initial callback on init. In 1.0.0 they now return a callback.
+The IPv4 addresses in the below example can be switched out for their IPv6 counterparts.
+In versions prior to Yarp 1.0.0, IP addresses would not perform an initial callback on init. In 1.0.0 they now return a callback.
+
 ```swift
 //base init defaults to "0.0.0.0" which is Apple's special internet reachability address
 let yarp: Yarp? = Yarp()
@@ -33,7 +41,7 @@ yarp?.addHandler("key1", handler: { (yarp) in
 ```
 
 ### OR Notification Observer
-you can listen for the notification sent from Yarp (if you have only one Yarp object you can safely set the object parameter to nil, but if you use more than one to monitor multiple hosts, then passing the object parameter into the addObserver function will make sure that you only get that objects reachability notifications)
+You can listen for the notification sent from Yarp. If you have only one Yarp object you can safely set the object parameter to nil, but if you use more than one to monitor multiple hosts, then passing the object parameter into the addObserver function will make sure that you only get that objects reachability notifications.
 
 ```swift
 //listen for ANY Yarp notification
@@ -58,16 +66,50 @@ func reachabilityChanged(notification: Notification) {
     }
 ```
 
-# Installation
-### Cocoapods
-Yarp can be added to your project using [CocoaPods](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your `Podfile`:
+## Installation
+### CocoaPods
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+```bash
+$ gem install cocoapods
+```
+
+To integrate Yarp into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'Yarp', '~> 1.0.0'
-```
-## Usage
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.1'
+use_frameworks!
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+target '<Your Target Name>' do
+    pod 'Yarp', '~> 1.0.0'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+### Carthage
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Yarp into your Xcode project using Carthage, specify it in your `Cartfile`:
+```ogdl
+github "Vectorform/Yarp" ~> 1.0.0
+```
+
+Run `carthage update` to build the framework and drag the built `Yarp.framework` into your Xcode project.
+
+
+### Manually
+If you prefer not to use any of the listed dependency managers, you can integrate Yarp into your project manually.
 
 
 ## Authors
