@@ -37,18 +37,18 @@ you can listen for the notification sent from Yarp (if you have only one Yarp ob
 
 ```swift
 //listen for ANY Yarp notification
-NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(_:)), name: Yarp.StatusChangedNotification, object: nil)
+NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged, name: Yarp.StatusChangedNotification, object: nil)
 
 // OR
 
 //listen for a specific Yarp notification
-NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(_:)), name: Yarp.StatusChangedNotification, object: yarpObject)
+NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged, name: Yarp.StatusChangedNotification, object: yarpObject)
 ```
 
 ### Set Notification handlers
 
 ```swift
-func reachabilityChanged(_ notification: Notification) {
+func reachabilityChanged(notification: Notification) {
         if let yarp = notification.object as? Yarp {
           //Note: isReachable will likely never be null here
             if let reachable = yarp.isReachable {
