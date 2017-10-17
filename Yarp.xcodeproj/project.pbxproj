@@ -6,6 +6,10 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F0AC71CF1F9640BB00CEBBE4 /* Yarp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0450CC21F9112E30050B9BB /* Yarp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3C7476BF1EAFCC2B00CEE45D /* Yarp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Yarp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0450CC01F9112E30050B9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AC71CF1F9640BB00CEBBE4 /* Yarp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

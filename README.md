@@ -1,4 +1,4 @@
-[![Swift 4 Compatible](https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift 4 Compatible](https://img.shields.io/badge/swift%204-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![Platform](https://img.shields.io/cocoapods/p/Yarp.svg?style=flat)](http://cocoadocs.org/docsets/Yarp)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Yarp.svg)](https://img.shields.io/cocoapods/v/Yarp.svg)
 
@@ -9,15 +9,15 @@ Created and maintained by Vectorform.
 Yarp (Yet another reachability pod) is a reachability framework with a focus on reliability and simplicity. Yarp fully supports IPv6 and IPv4. Yarp allows you to observe changes in reachability using blocks or notifications.
 
 # Initilize Yarp Object
-Note: the IPv4 addresses in the below example can be switched out for their IPv6 counterparts.
+Note: the IPv4 addresses in the below example can be switched out for their IPv6 counterparts. In versions prior to Yarp 1.0.0, IP addresses would not perform an initial callback on init. In 1.0.0 they now return a callback.
 ```swift
-//base init defaults to "0.0.0.0" which is Apple's special internet reachability address, Does NOT return an initial callback
+//base init defaults to "0.0.0.0" which is Apple's special internet reachability address
 let yarp: Yarp? = Yarp()
 
-//Custom hostname init, DOES make an initial callback when first started
+//Custom hostname init
 let yarp: Yarp? = Yarp(hostName: "www.google.com") //or "http://216.58.195.238" either will work
 
-//Custom Address init, does NOT return an initial callback when started
+//Custom Address init
 let yarp: Yarp? = Yarp(hostAddress: "216.58.195.238")
 yarp?.start()
 ```
