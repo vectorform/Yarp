@@ -14,7 +14,7 @@ Yarp (Yet another reachability pod) is a reachability framework with a focus on 
   s.social_media_url = 'https://twitter.com/vectorform'
 
   s.source_files = 'Source/*.swift'
-  s.platform     = :ios, '10.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
   s.frameworks = 'SystemConfiguration'
 

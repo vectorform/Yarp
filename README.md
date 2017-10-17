@@ -10,7 +10,7 @@ Created and maintained by Vectorform.
 Yarp (Yet another reachability pod) is a reachability framework with a focus on reliability and simplicity. Yarp fully supports IPv6 and IPv4. Yarp allows you to observe changes in reachability using blocks or notifications.
 
 # Requirements
-- iOS 11.0+
+- iOS 8.0+
 - Xcode 9.0+
 - Swift 4.0+
 
